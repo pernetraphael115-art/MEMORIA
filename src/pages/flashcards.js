@@ -160,9 +160,13 @@ function renderCard(el) {
   const backWord = isEsToFr ? card.fr : card.es;
   const frontPrompt = isEsToFr ? 'Traduis en français' : 'Traduis en espagnol';
   
-  // Pick examples to show (2 max)
+  // Pick examples to show (2 max) with French translations
   const examples = card.examples || (card.example ? [card.example] : []);
-  const examplesHtml = examples.slice(0, 2).map(ex => `<div class="flashcard-example">"${ex}"</div>`).join('');
+  const examplesFr = card.examplesFr || [];
+  const examplesHtml = examples.slice(0, 2).map((ex, i) => {
+    const frTranslation = examplesFr[i] ? `<div class="flashcard-example-fr">→ ${examplesFr[i]}</div>` : '';
+    return `<div class="flashcard-example"><div class="flashcard-example-es">"${ex}"</div>${frTranslation}</div>`;
+  }).join('');
   
   area.innerHTML = `
     <div class="flashcard-progress">

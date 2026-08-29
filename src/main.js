@@ -18,6 +18,7 @@ import { renderLexicon } from './pages/lexicon.js';
 import { renderPhrases } from './pages/phrases.js';
 import { renderReview } from './pages/review.js';
 import { renderStats } from './pages/stats.js';
+import { renderTranslate } from './pages/translate.js';
 import { getDueCount } from './core/srs.js';
 
 // Build app shell
@@ -58,6 +59,10 @@ async function initApp() {
         <span class="nav-icon">💬</span>
         <span>Phrases</span>
       </button>
+      <button class="nav-item" data-path="/translate" id="nav-translate">
+        <span class="nav-icon">✍️</span>
+        <span>Traduire</span>
+      </button>
     </nav>
   `;
   
@@ -75,6 +80,7 @@ async function initApp() {
   route('/flashcards', renderFlashcards);
   route('/vocab', renderLexicon);
   route('/phrases', renderPhrases);
+  route('/translate', renderTranslate);
   route('/review', renderReview);
   route('/stats', renderStats);
   
