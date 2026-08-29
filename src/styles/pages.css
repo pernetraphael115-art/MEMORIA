@@ -959,6 +959,16 @@
   font-weight: 700;
 }
 
+.translate-match-score {
+  margin-left: auto;
+  font-size: var(--font-sm);
+  font-weight: 600;
+  color: var(--text-tertiary);
+  background: rgba(255,255,255,0.05);
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+}
+
 .translate-comparison {
   display: flex;
   flex-direction: column;
