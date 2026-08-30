@@ -1,7 +1,17 @@
 // Vocabulary data organized by level and theme
 // Each word: { es, fr, gender (m/f/n), examples: [string, string], examplesFr: [string, string], theme, level }
 
-export const vocabularyData = [
+import { vocabExtraA1 } from './vocab_extra_a1.js';
+import { vocabExtraA1b } from './vocab_extra_a1b.js';
+import { vocabExtraA1c } from './vocab_extra_a1c.js';
+import { vocabExtraA2 } from './vocab_extra_a2.js';
+import { vocabExtraA2b } from './vocab_extra_a2b.js';
+import { vocabExtraB1 } from './vocab_extra_b1.js';
+import { vocabExtraB1b } from './vocab_extra_b1b.js';
+import { vocabExtraB2 } from './vocab_extra_b2.js';
+import { vocabExtraB2b } from './vocab_extra_b2b.js';
+
+const vocabularyBase = [
   // ==================== A1 — SALUTATIONS & PRÉSENTATIONS ====================
   { es: "hola", fr: "bonjour / salut", gender: "n", examples: ["¡Hola! ¿Qué tal?", "Hola, me llamo Pablo."], examplesFr: ["Salut ! Comment ça va ?", "Bonjour, je m'appelle Pablo."], theme: "salutations", level: "a1" },
   { es: "buenos días", fr: "bonjour (matin)", gender: "n", examples: ["Buenos días, señora.", "Buenos días, ¿cómo ha dormido?"], examplesFr: ["Bonjour, madame.", "Bonjour, comment avez-vous dormi ?"], theme: "salutations", level: "a1" },
@@ -361,7 +371,21 @@ export const vocabularyData = [
   { es: "suponer", fr: "supposer", gender: "n", examples: ["Supongo que sí.", "Supongo que vendrá mañana."], examplesFr: ["Je suppose que oui.", "Je suppose qu'il viendra demain."], theme: "verbes", level: "b2" },
 ];
 
+export const vocabularyData = [
+  ...vocabularyBase,
+  ...vocabExtraA1,
+  ...vocabExtraA1b,
+  ...vocabExtraA1c,
+  ...vocabExtraA2,
+  ...vocabExtraA2b,
+  ...vocabExtraB1,
+  ...vocabExtraB1b,
+  ...vocabExtraB2,
+  ...vocabExtraB2b,
+];
+
 export const themes = [
+  // A1
   { id: "salutations", name: "Salutations", emoji: "👋", level: "a1" },
   { id: "nombres", name: "Nombres & dates", emoji: "🔢", level: "a1" },
   { id: "temps", name: "Le temps", emoji: "⏰", level: "a1" },
@@ -372,18 +396,40 @@ export const themes = [
   { id: "couleurs", name: "Couleurs", emoji: "🎨", level: "a1" },
   { id: "verbes", name: "Verbes essentiels", emoji: "⚡", level: "a1" },
   { id: "adjectifs", name: "Adjectifs", emoji: "💬", level: "a1" },
-  { id: "corps", name: "Corps & santé", emoji: "🏥", level: "a2" },
+  { id: "animaux", name: "Animaux", emoji: "🐾", level: "a1" },
+  { id: "ville", name: "Ville & lieux", emoji: "🏙️", level: "a1" },
+  { id: "transports", name: "Transports", emoji: "🚌", level: "a1" },
+  { id: "météo", name: "Météo", emoji: "☀️", level: "a1" },
+  { id: "école", name: "École & études", emoji: "📚", level: "a1" },
+  { id: "directions", name: "Directions", emoji: "🧭", level: "a1" },
+  { id: "achats", name: "Achats & argent", emoji: "💰", level: "a1" },
+  { id: "quotidien", name: "Actions quotidiennes", emoji: "🌅", level: "a1" },
+  { id: "objets", name: "Objets du quotidien", emoji: "🔑", level: "a1" },
+  { id: "connecteurs", name: "Mots de liaison", emoji: "🔗", level: "a1" },
+  { id: "corps", name: "Corps & santé", emoji: "🏥", level: "a1" },
+  // A2
+  { id: "relations", name: "Relations sociales", emoji: "🤝", level: "a2" },
   { id: "santé", name: "Santé", emoji: "💊", level: "a2" },
   { id: "voyages", name: "Voyages", emoji: "✈️", level: "a2" },
   { id: "travail", name: "Travail", emoji: "💼", level: "a2" },
   { id: "loisirs", name: "Loisirs & sport", emoji: "⚽", level: "a2" },
-  { id: "émotions", name: "Émotions", emoji: "😊", level: "b1" },
+  { id: "émotions", name: "Émotions", emoji: "😊", level: "a2" },
+  // B1
+  { id: "communication", name: "Communication", emoji: "🗣️", level: "b1" },
   { id: "caractère", name: "Caractère", emoji: "🧠", level: "b1" },
+  { id: "société", name: "Société", emoji: "🏘️", level: "b1" },
   { id: "technologie", name: "Technologie", emoji: "💻", level: "b1" },
   { id: "médias", name: "Médias", emoji: "📰", level: "b1" },
   { id: "environnement", name: "Environnement", emoji: "🌍", level: "b1" },
+  { id: "expressions", name: "Expressions courantes", emoji: "💬", level: "b1" },
+  { id: "cuisine", name: "Cuisine & gastronomie", emoji: "👨‍🍳", level: "b1" },
+  { id: "éducation", name: "Éducation avancée", emoji: "🎓", level: "b1" },
+  // B2
   { id: "politique", name: "Politique", emoji: "🏛️", level: "b2" },
   { id: "abstrait", name: "Concepts abstraits", emoji: "💡", level: "b2" },
+  { id: "économie", name: "Économie & finances", emoji: "📊", level: "b2" },
+  { id: "droit", name: "Droit & justice", emoji: "⚖️", level: "b2" },
+  { id: "psychologie", name: "Psychologie", emoji: "🧠", level: "b2" },
 ];
 
 export function getVocabByLevel(level) {

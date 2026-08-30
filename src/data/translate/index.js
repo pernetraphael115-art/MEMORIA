@@ -2,7 +2,27 @@
 // Each entry: { es, fr, altFr?, altEs?, level, explanation, keywords, category }
 // altFr/altEs = alternative accepted translations (for smart matching)
 
-export const translateData = [
+import { translateExtraA1 } from './translate_extra_a1.js';
+import { translateExtraA1b } from './translate_extra_a1b.js';
+import { translateExtraA1c } from './translate_extra_a1c.js';
+import { translateExtraA1d } from './translate_extra_a1d.js';
+import { translateExtraA1e } from './translate_extra_a1e.js';
+import { translateExtraA1f } from './translate_extra_a1f.js';
+import { translateExtraA2 } from './translate_extra_a2.js';
+import { translateExtraA2b } from './translate_extra_a2b.js';
+import { translateExtraA2c } from './translate_extra_a2c.js';
+import { translateExtraA2d } from './translate_extra_a2d.js';
+import { translateExtraA2e } from './translate_extra_a2e.js';
+import { translateExtraB1 } from './translate_extra_b1.js';
+import { translateExtraB1b } from './translate_extra_b1b.js';
+import { translateExtraB1c } from './translate_extra_b1c.js';
+import { translateExtraB1d } from './translate_extra_b1d.js';
+import { translateExtraB2 } from './translate_extra_b2.js';
+import { translateExtraB2b } from './translate_extra_b2b.js';
+import { translateExtraB2c } from './translate_extra_b2c.js';
+import { translateExtraB2d } from './translate_extra_b2d.js';
+
+const translateBase = [
   // ==================== A1 — PHRASES SIMPLES ====================
   { es: "Me llamo Pablo y soy de España.",
     fr: "Je m'appelle Pablo et je suis d'Espagne.",
@@ -654,6 +674,29 @@ export const translateData = [
     explanation: "«Por más que + subj./ind.» = avoir beau. «Intentar» = essayer. «Conseguir + infinitif» = arriver à / réussir à. «La diferencia entre» = la différence entre.",
     keywords: ["por más que", "intentar", "conseguir"],
     category: "apprentissage" },
+];
+
+export const translateData = [
+  ...translateBase,
+  ...translateExtraA1,
+  ...translateExtraA1b,
+  ...translateExtraA1c,
+  ...translateExtraA1d,
+  ...translateExtraA1e,
+  ...translateExtraA1f,
+  ...translateExtraA2,
+  ...translateExtraA2b,
+  ...translateExtraA2c,
+  ...translateExtraA2d,
+  ...translateExtraA2e,
+  ...translateExtraB1,
+  ...translateExtraB1b,
+  ...translateExtraB1c,
+  ...translateExtraB1d,
+  ...translateExtraB2,
+  ...translateExtraB2b,
+  ...translateExtraB2c,
+  ...translateExtraB2d,
 ];
 
 export function getTranslateByLevel(level) {
